@@ -1,0 +1,21 @@
+---
+title: "Dogmasnail"
+output: rmarkdown::pdf_document
+vignette: >
+  %\VignetteIndexEntry{Dogmasnail}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(dogmasnail)
+```
+
+The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included. Also include the main points from your discussion in Task 3.
