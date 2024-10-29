@@ -21,3 +21,22 @@ library(dogmasnail)
 The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included. Also include the main points from your discussion in Task 3.
 
 Ciaooo
+
+### function 1
+
+
+### function 2
+
+
+### function 3
+
+
+### function 4
+
+
+### function 5
+
+
+
+
+
