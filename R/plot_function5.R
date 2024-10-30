@@ -2,7 +2,7 @@
 #'@importFrom ggplot2 ggplot aes geom_col theme_bw theme
 #'@importFrom stringr str_split boundary str_count
 #'
-#' @param input is vector of nucleotie sequence
+#' @param input is character string of nucleotide sequence or amino acid sequence
 #'
 #' @return the output is a plot that shows the number of times each nucleotide occurs
 #' @export
