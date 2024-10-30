@@ -22,21 +22,14 @@ The vignette should include a brief description of what the package is about and
 
 Ciaooo
 
-### function 1
+dogmasnail is a package that can facilitate bioinformaticians work with the central dogma (DNA-\>RNA-\>proteins). The package consists of six functions.
 
+### function 1
 
 ### function 2
 
-
 ### function 3
-
 
 ### function 4
 
-
 ### function 5
-
-
-
-
-
