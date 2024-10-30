@@ -32,7 +32,7 @@ library(dogmasnail)
 
 dogmasnail is a package that can facilitate bioinformaticians work with the central dogma (DNA-\>RNA-\>proteins). The package consists of the following five functions.
 
-**The last person to edit this vignette should delete the following text which is from the assignment description: "**The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and **in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included.** Also include the main points from your discussion in Task 3."
+[**The last person to edit this vignette should delete the following text which is from the assignment description: "**The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and **in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included.** Also include the main points from your discussion in Task 3."]{.underline}
 
 ## Function 1
 
@@ -40,7 +40,7 @@ dogmasnail is a package that can facilitate bioinformaticians work with the cent
 
 DNA and RNA sequences consist of four nucelotides. "A", "T", "C", "G" for DNA and "A", "U", "C", "G" for RNA.
 
-`ut_function2()`\`can be used to transform a DNA sequence to an RNA sequence by replacing any T in the nucleotide sequence with a U. The input is a DNA sequence of nucleotides in the format of a character string or a vector of character strings. THe output is a character string corrersponding to the RNA sequence. Consider an example
+`ut_function2()`\`can be used to transform a DNA sequence to an RNA sequence by replacing any T in the nucleotide sequence with a U. The input is a DNA sequence of nucleotides in the format of a character string or a vector of character strings. The output is a character string corrersponding to the RNA sequence. Consider an example
 
 ```{r}
 dna <- c("ATATACGGCGCG", "ATTCGCGTATATA")
@@ -52,11 +52,20 @@ ut_function2(dna_seq = dna)
 
 ## Function 3
 
+When RNA arrives to a ribosome, the translation to protein starts. Each aminoacid is coded by exactly 3 nucleotides of mRNA. `divide()` separates the sequence and group the into 3 character strings. Ensuring that the following process of translation goes smoothly.
+
+```{r}
+input_text <- "AGUCUCCAAGU"
+divide(input_text)
+
+
+```
+
 ## Function 4
 
 ## Function 5: plot_function5
 
-When having a sequence of nucleotides (DNA or RNA) or an aminoacid sequence (peptide), it can be useful to see what is the distribution of nucleotides or aminoacids (AA). `plot_function5()`\`does exactly this by counting the distribution of each nucleotide or AA and showing the distribution in a plot. The input to the function is a character string of either nucleotides or aminoacids. See the below examples.
+When having a sequence of nucleotides (DNA or RNA) or an aminoacid sequence (peptide), it can be useful to see what is the distribution of nucleotides or aminoacids (AA). `plot_function5()` does exactly this by counting the distribution of each nucleotide or AA and showing the distribution in a plot. The input to the function is a character string of either nucleotides or aminoacids. See the below examples.
 
 ```{r}
 dna <- "ATTCCGGGCGCG"
@@ -73,7 +82,13 @@ plot_function5(AA)
 
 ## How the functions can be used in combination
 
-An example could be to first convert a DNA string to RNA using `ut_function2`\`and then show the distribution in a plot using `plot_function5`\`.
+Firstly...
+
+Then, convert a DNA string to RNA using `ut_function2`\`
+
+After that, group the RNA sequence into codons using function `divide()`.
+
+and then show the distribution in a plot using `plot_function5`\`.
 
 ```{r}
 dna <- "ATTCCGGGCGCG"
