@@ -4,13 +4,13 @@
 \alias{ut_function2}
 \title{ut_function2}
 \usage{
-ut_function2(input)
+ut_function2(dna_seq)
 }
 \arguments{
-\item{input}{is a character string where T will be replaced with U}
+\item{dna_seq}{is a character string of nucleotides (DNA) where T will be replaced with U}
 }
 \value{
-gives us the modified UT string where every T is U is replaced by U
+gives us the modified UT string (RNA) where every T is replaced by U
 }
 \description{
 ut_function2

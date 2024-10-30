@@ -18,18 +18,75 @@ knitr::opts_chunk$set(
 library(dogmasnail)
 ```
 
-The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included. Also include the main points from your discussion in Task 3.
+#### Group members
 
-Ciaooo
+| Name                  | ID      |
+|-----------------------|---------|
+| Arne Hellhund         | arnhell |
+| Magdalena Dzierzynska | s194428 |
+| Lasse Buhl            | s215025 |
+| Saxe Wagner           | s204559 |
+| Antonio Mocinic       | s243171 |
 
-dogmasnail is a package that can facilitate bioinformaticians work with the central dogma (DNA-\>RNA-\>proteins). The package consists of six functions.
+## Working with the central dogma in R
 
-### function 1
+dogmasnail is a package that can facilitate bioinformaticians work with the central dogma (DNA-\>RNA-\>proteins). The package consists of the following five functions.
 
-### function 2
+**The last person to edit this vignette should delete the following text which is from the assignment description: "**The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and **in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included.** Also include the main points from your discussion in Task 3."
 
-### function 3
+## Function 1
 
-### function 4
+## Function 2: ut_function2
 
-### function 5
+DNA and RNA sequences consist of four nucelotides. "A", "T", "C", "G" for DNA and "A", "U", "C", "G" for RNA.
+
+`ut_function2()`\`can be used to transform a DNA sequence to an RNA sequence by replacing any T in the nucleotide sequence with a U. The input is a DNA sequence of nucleotides in the format of a character string or a vector of character strings. THe output is a character string corrersponding to the RNA sequence. Consider an example
+
+```{r}
+dna <- c("ATATACGGCGCG", "ATTCGCGTATATA")
+```
+
+```{r}
+ut_function2(dna_seq = dna)
+```
+
+## Function 3
+
+## Function 4
+
+## Function 5: plot_function5
+
+When having a sequence of nucleotides (DNA or RNA) or an aminoacid sequence (peptide), it can be useful to see what is the distribution of nucleotides or aminoacids (AA). `plot_function5()`\`does exactly this by counting the distribution of each nucleotide or AA and showing the distribution in a plot. The input to the function is a character string of either nucleotides or aminoacids. See the below examples.
+
+```{r}
+dna <- "ATTCCGGGCGCG"
+AA <- "FSYYFSYADGVGVPQR"
+```
+
+```{r}
+plot_function5(dna)
+```
+
+```{r}
+plot_function5(AA)
+```
+
+## How the functions can be used in combination
+
+An example could be to first convert a DNA string to RNA using `ut_function2`\`and then show the distribution in a plot using `plot_function5`\`.
+
+```{r}
+dna <- "ATTCCGGGCGCG"
+```
+
+```{r}
+rna <- ut_function2(dna)
+```
+
+```{r}
+plot_function5(rna)
+```
+
+## Ideas for further function development
+
+An idea for further function development would be to develop a function that can translate a nucleotide sequence into an amino acid sequence. First a DNA can be translated into RNA using `ut_function2`\`and then RNA can be translated into codons and then the codons could be translated into aminoacids.
