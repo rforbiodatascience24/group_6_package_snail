@@ -52,7 +52,7 @@ ut_function2(dna_seq = dna)
 
 ## Function 3
 
-When RNA arrives to a ribosome, the translation to protein starts. Each aminoacid is coded by exactly 3 nucleotides of mRNA. `divide()` separates the sequence and group the into 3 character strings. Ensuring that the following process of translation goes smoothly.
+When RNA arrives to a ribosome, the translation to protein starts. Each aminoacid is coded by exactly 3 nucleotides of mRNA. `divide()` separates the sequence and group the into 3 character strings.
 
 ```{r}
 input_text <- "AGUCUCCAAGU"
@@ -88,6 +88,8 @@ Then, convert a DNA string to RNA using `ut_function2`\`
 
 After that, group the RNA sequence into codons using function `divide()`.
 
+...
+
 and then show the distribution in a plot using `plot_function5`\`.
 
 ```{r}
@@ -105,3 +107,5 @@ plot_function5(rna)
 ## Ideas for further function development
 
 An idea for further function development would be to develop a function that can translate a nucleotide sequence into an amino acid sequence. First a DNA can be translated into RNA using `ut_function2`\`and then RNA can be translated into codons and then the codons could be translated into aminoacids.
+
+Also, we could implement that translation starts after the first *start* codon, and stops after the *stop* codon.
