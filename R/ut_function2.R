@@ -1,14 +1,14 @@
 #' ut_function2
 #'
-#' @param input is a character string where T will be replaced with U
+#' @param dna_seq is a character string of nucleotides (DNA) where T will be replaced with U
 #'
-#' @return gives us the modified UT string where every T is U is replaced by U
+#' @return gives us the modified UT string (RNA) where every T is replaced by U
 #' @export
 #'
 #' @examples
 #' x <- "ATT"
 #' ut_function2(x)
-ut_function2 <- function(input){
-  new_vector <- gsub("T", "U", input)
-  return(new_vector)
+ut_function2 <- function(dna_seq){
+  rna_seq <- gsub("T", "U", dna_seq)
+  return(rna_seq)
 }

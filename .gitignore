@@ -2,4 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
 dogmasnail.Rproj
+=======
+inst/doc
+/doc/
+/Meta/
+>>>>>>> 5c12167106e86268f03113309eeea50b78f78303

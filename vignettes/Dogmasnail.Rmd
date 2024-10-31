@@ -1,0 +1,131 @@
+---
+title: "Dogmasnail"
+output: rmarkdown::pdf_document
+vignette: >
+  %\VignetteIndexEntry{Dogmasnail}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(dogmasnail)
+```
+
+#### Group members
+
+| Name                  | ID      |
+|-----------------------|---------|
+| Arne Hellhund         | arnhell |
+| Magdalena Dzierzynska | s194428 |
+| Lasse Buhl            | s215025 |
+| Saxe Wagner           | s204559 |
+| Antonio Mocinic       | s243171 |
+
+## Working with the central dogma in R
+
+dogmasnail is a package that can facilitate bioinformaticians work with the central dogma (DNA-\>RNA-\>proteins). The package consists of the following five functions.
+
+[**The last person to edit this vignette should delete the following text which is from the assignment description: "**The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and **in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included.** Also include the main points from your discussion in Task 3."]{.underline}
+
+## Function 1: ran_dna
+
+The function `ran_dna()` creates a random nucleotide sequence. The function takes an input number value and returns a character string of said length of randomly associated nucleotides.
+
+```{r}
+seqlen <- 5
+ran_dna(seqlen)
+
+# You can also use the pipe-operator
+seqlen |> 
+  ran_dna()
+```
+
+## Function 2: ut_function2
+
+DNA and RNA sequences consist of four nucelotides. "A", "T", "C", "G" for DNA and "A", "U", "C", "G" for RNA.
+
+`ut_function2()`\`can be used to transform a DNA sequence to an RNA sequence by replacing any T in the nucleotide sequence with a U. The input is a DNA sequence of nucleotides in the format of a character string or a vector of character strings. The output is a character string corrersponding to the RNA sequence. Consider an example
+
+```{r}
+dna <- c("ATATACGGCGCG", "ATTCGCGTATATA")
+```
+
+```{r}
+ut_function2(dna_seq = dna)
+```
+
+## Function 3
+
+When RNA arrives to a ribosome, the translation to protein starts. Each aminoacid is coded by exactly 3 nucleotides of mRNA. `divide()` separates the sequence and group the into 3 character strings.
+
+```{r}
+input_text <- "AGUCUCCAAGU"
+divide(input_text)
+
+
+```
+
+## Function 4
+
+## Function 5: plot_function5
+
+When having a sequence of nucleotides (DNA or RNA) or an aminoacid sequence (peptide), it can be useful to see what is the distribution of nucleotides or aminoacids (AA). `plot_function5()` does exactly this by counting the distribution of each nucleotide or AA and showing the distribution in a plot. The input to the function is a character string of either nucleotides or aminoacids. See the below examples.
+
+```{r}
+dna <- "ATTCCGGGCGCG"
+AA <- "FSYYFSYADGVGVPQR"
+```
+
+```{r}
+plot_function5(dna)
+```
+
+```{r}
+plot_function5(AA)
+```
+
+## How the functions can be used in combination
+
+All functions alter and or analyse DNA/RNA sequences. Initiating a pipeline could begin with observed or known DNA/RNA sequences, or originate from randomly generated sequences.
+
+`ran_dna()` allows you to generate a random dna sequence with a user-defined length.
+
+```{r}
+seqlen <- 10
+
+ran_dna(seqlen)
+```
+
+Now a known or random DNA sequence could be translated to a hypothetical mRNA using `ut_function2`, assuming the DNA is the coding strand.
+
+After that, group the RNA sequence into codons using function `divide()`, and then show the distribution in a plot using `plot_function5`\`.
+
+```{r}
+seqlen <- 50
+
+seqlen |> 
+  ran_dna() |> # Creates a random dna sequence
+  ut_function2() # Translates the thyrosine into uracil
+```
+
+```{r}
+seqlen <- 50
+
+seqlen |> 
+  ran_dna() |> # Creates a random dna sequence
+  ut_function2() |> # Translates the thyrosine into uracil
+  plot_function5() # Plots a column chart of the nucleotides
+```
+
+## Ideas for further function development
+
+An idea for further function development would be to develop a function that can translate a nucleotide sequence into an amino acid sequence. First a DNA can be translated into RNA using `ut_function2`\`and then RNA can be translated into codons and then the codons could be translated into aminoacids.
+
+Also, we could implement that translation starts after the first *start* codon, and stops after the *stop* codon.
