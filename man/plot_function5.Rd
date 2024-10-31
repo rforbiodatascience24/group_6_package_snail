@@ -7,7 +7,7 @@
 plot_function5(input)
 }
 \arguments{
-\item{input}{is vector of nucleotie sequence}
+\item{input}{is character string of nucleotide sequence or amino acid sequence}
 }
 \value{
 the output is a plot that shows the number of times each nucleotide occurs

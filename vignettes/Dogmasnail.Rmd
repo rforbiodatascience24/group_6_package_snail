@@ -34,7 +34,18 @@ dogmasnail is a package that can facilitate bioinformaticians work with the cent
 
 [**The last person to edit this vignette should delete the following text which is from the assignment description: "**The vignette should include a brief description of what the package is about and demonstrate how each function in the package is used (individually and **in conjunction with each other). As a final section, discuss use cases for the package and what other functions could be included.** Also include the main points from your discussion in Task 3."]{.underline}
 
-## Function 1
+## Function 1: ran_dna
+
+The function `ran_dna()` creates a random nucleotide sequence. The function takes an input number value and returns a character string of said length of randomly associated nucleotides.
+
+```{r}
+seqlen <- 5
+ran_dna(seqlen)
+
+# You can also use the pipe-operator
+seqlen |> 
+  ran_dna()
+```
 
 ## Function 2: ut_function2
 
@@ -82,26 +93,35 @@ plot_function5(AA)
 
 ## How the functions can be used in combination
 
-Firstly...
+All functions alter and or analyse DNA/RNA sequences. Initiating a pipeline could begin with observed or known DNA/RNA sequences, or originate from randomly generated sequences.
 
-Then, convert a DNA string to RNA using `ut_function2`\`
-
-After that, group the RNA sequence into codons using function `divide()`.
-
-...
-
-and then show the distribution in a plot using `plot_function5`\`.
+`ran_dna()` allows you to generate a random dna sequence with a user-defined length.
 
 ```{r}
-dna <- "ATTCCGGGCGCG"
+seqlen <- 10
+
+ran_dna(seqlen)
+```
+
+Now a known or random DNA sequence could be translated to a hypothetical mRNA using `ut_function2`, assuming the DNA is the coding strand.
+
+After that, group the RNA sequence into codons using function `divide()`, and then show the distribution in a plot using `plot_function5`\`.
+
+```{r}
+seqlen <- 50
+
+seqlen |> 
+  ran_dna() |> # Creates a random dna sequence
+  ut_function2() # Translates the thyrosine into uracil
 ```
 
 ```{r}
-rna <- ut_function2(dna)
-```
+seqlen <- 50
 
-```{r}
-plot_function5(rna)
+seqlen |> 
+  ran_dna() |> # Creates a random dna sequence
+  ut_function2() |> # Translates the thyrosine into uracil
+  plot_function5() # Plots a column chart of the nucleotides
 ```
 
 ## Ideas for further function development
